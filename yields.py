@@ -86,10 +86,10 @@ def update_interest_rates():
 
     for asset_symbol in config[network]["lending_tokens"]:
         if asset_symbol not in lend_yields[network]:
-            lend_yields[network][asset_symbol] = {"apy_base": 0,
-                                                  "apy_base_borrow": 0, 
-                                                  "apy_reward": 0, 
-                                                  "apy_reward_borrow": 0,
+            lend_yields[network][asset_symbol] = {"apr_base": 0,
+                                                  "apr_base_borrow": 0, 
+                                                  "apr_reward": 0, 
+                                                  "apr_reward_borrow": 0,
                                                   "total_deposit_yield": 0,
                                                   "total_borrow_yield": 0}
 
@@ -97,13 +97,12 @@ def update_interest_rates():
         variable_borrow_rate = update_borrow_rate(w3, network, asset_symbol)
         liquidity_rate = update_liquidity_rate(w3, network, asset_symbol)
         
-        # Convert APR to APY for both deposit and borrow rates
-        percent_deposit_apy = 100 * ((1 + liquidity_rate / RAY / DAYS_PER_YEAR) ** DAYS_PER_YEAR - 1)
-        percent_variable_borrow_apy = 100 * ((1 + variable_borrow_rate / RAY / DAYS_PER_YEAR) ** DAYS_PER_YEAR - 1)
+        deposit_apr = 100 * (liquidity_rate / RAY)
+        borrow_apr = 100 * (variable_borrow_rate / RAY)
         
-        # Store APY as a percentage
-        lend_yields[network][asset_symbol]["apy_base"] = percent_deposit_apy
-        lend_yields[network][asset_symbol]["apy_base_borrow"] = percent_variable_borrow_apy 
+        # Store APR as a percentage
+        lend_yields[network][asset_symbol]["apr_base"] = deposit_apr
+        lend_yields[network][asset_symbol]["apr_base_borrow"] = borrow_apr 
         
         # Reward calculation requires correct decimal adjustment
         reward_token = config[network]["contracts"]["lending_reward_token"]
@@ -128,24 +127,24 @@ def update_interest_rates():
         adjusted_debt_token_supply = debt_token_supply / (10 ** token_decimals)
         
         if o_token_emission_per_second>0:
-            percentDepositAPR = (o_token_emission_per_second * SECONDS_PER_YEAR * reward_token_price) / (adjusted_o_token_supply * token_price * LEND_ORACLE_PRECISION)
+            reward_deposit_apr = (o_token_emission_per_second * SECONDS_PER_YEAR * reward_token_price) / (adjusted_o_token_supply * token_price * LEND_ORACLE_PRECISION)
         else:
-            percentDepositAPR = 0
+            reward_deposit_apr = 0
         
         if debt_token_emission_per_second>0:
-            percentBorrowAPR = (debt_token_emission_per_second * SECONDS_PER_YEAR * reward_token_price) / (adjusted_debt_token_supply * token_price * LEND_ORACLE_PRECISION)
+            reward_borrow_apr = (debt_token_emission_per_second * SECONDS_PER_YEAR * reward_token_price) / (adjusted_debt_token_supply * token_price * LEND_ORACLE_PRECISION)
         else:
-            percentBorrowAPR = 0
+            reward_borrow_apr = 0
             
         if network == "meter":
-            percentDepositAPR = 0
-            percentBorrowAPR = 0
+            reward_deposit_apr = 0
+            reward_borrow_apr = 0
             
-        lend_yields[network][asset_symbol]["apy_reward"] = percentDepositAPR
-        lend_yields[network][asset_symbol]["apy_reward_borrow"] = percentBorrowAPR
+        lend_yields[network][asset_symbol]["apr_reward"] = reward_deposit_apr
+        lend_yields[network][asset_symbol]["apr_reward_borrow"] = reward_borrow_apr
         
-        lend_yields[network][asset_symbol]["total_deposit_yield"] = percentDepositAPR + percent_deposit_apy
-        lend_yields[network][asset_symbol]["total_borrow_yield"] = percentBorrowAPR - percent_variable_borrow_apy
+        lend_yields[network][asset_symbol]["total_deposit_yield"] = reward_deposit_apr + deposit_apr
+        lend_yields[network][asset_symbol]["total_borrow_yield"] = reward_borrow_apr - borrow_apr
         
         update_lending_yields()
         
