@@ -1,0 +1,304 @@
+{
+    "base": {
+        "lending_incentives": false,
+        "mint_incentives": false,
+        "staking_keeper": false,
+        "mint_active": true,
+        "trade_active": true,
+        "lend_active": false,
+        "communityIssuenceStartTime": 1690981899,
+        "contracts": {
+            "position_keeper": "0xFd60266002F4FAaBE8d8d9C66294EDe4810C6f34",
+            "limit_order_keeper": "0x948d447ef250E3468481E8622A475980F01015e1",
+            "vault": "0x853a8cE6B6338f5B0A14BCfc97F9D68396099C9C",
+            "order_book": "0xAbd18360D023e0F61c7E5Bbe5A27d35e9882a916",
+            "positionRouter": "0xd5cA7F157b23919347b9D6bA963E456F3E2195e8",
+            "troveManager": "0x56a901FdF67FC52e7012eb08Cfb47308490A982C",
+            "communityIssuence": "0x89eF5FFdCCaB782B82A354D934070D0Da667a4aF",
+            "stabilityPool": "0xED7FEe2F4A8Fc3Ca353870e3C1a011b24cBe4117",
+            "WETH": "0x4200000000000000000000000000000000000006",
+            "salaryDistributor": "0xA25bc8c1e230a476cB00f2e9c93ffC2D4e163dc5",
+            "oracle_keeper": "0x5979009f2eCF5C65933F0A2C9d63C2722FB943E1"
+        },
+        "rpcs": [
+            "https://base-pokt.nodies.app",
+            "https://developer-access-mainnet.base.org",
+            "https://mainnet.base.org",
+            "https://base.meowrpc.com"
+        ],
+        "coingecko_id": "ethereum"
+    },
+    "fuse": {
+        "lending_incentives": true,
+        "mint_incentives": true,
+        "staking_keeper": true,
+        "mint_active": true,
+        "trade_active": false,
+        "lend_active": true,
+        "contracts": {
+            "oracle_keeper": "0x1241f44BFA102ab7386C784959BAe3D0fB923734",
+            "lending_reward_token": "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629",
+            "lend_oracle": "0x0dE631646a48FaAb8dd4761aa2ce565fe68D2328",
+            "MeridianProtocolDataProvider": "0xdb0554Bc0a86793EEDB4e3ce152d85082c71d7A9",
+            "walletBalanceProvider": "0x8A4EEAd335CBd1A7991d7e5B19Cb2788deccB47A",
+            "pullRewardsIncentivesController": "0xd2Fa60C6fab6EdF77E78A0908066d04a5F5EB1E0",
+            "lendingPool": "0x08E387E24E3b431790E845D1b3c02913679A8b2F",
+            "troveManager": "0xCD413fC3347cE295fc5DB3099839a203d8c2E6D9",
+            "communityIssuence": "0x077d17F8de5F2cC47d887e2e19A66d143ad1F14d",
+            "stabilityPool": "0x9cBE9FB07df168e1F1D3A61E665759DDaC100Bd4",
+            "staking_keeper": "0x873415F6633A0C42b8717bC898354638F52b13f3",
+            "stakingPool": "0xb513fE4E2a3ed79bE6a7a936C7837f0294AFFEAd"
+        },
+        "rpcs": [
+            "https://explorer-node.fuse.io/",
+            "https://fuse.drpc.org",
+            "https://fuse-pokt.nodies.app",
+            "https://fuse.liquify.com",
+            "https://rpc.fuse.io"
+        ],
+        "coingecko_id": "fuse-network-token",
+        "lending_tokens": {
+            "WETH": {
+                "token": "0x5622F6dC93e08a8b717B149677930C38d5d50682",
+                "oToken": "0xeC3911CCa56Ad400047EC78BbD4EDc9DcE27A745",
+                "debtToken": "0x0A3305108968F63AE5D5cBb16569c81a3baa9C9B",
+                "decimals": 18
+            },
+            "FUSE": {
+                "token": "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629",
+                "oToken": "0xb012458830ed5B5A699ed2cc3A29C4b102abed6a",
+                "debtToken": "0xc246eBCB3331a866f56a9e6C757809Cc31201b09",
+                "decimals": 18
+            },
+            "SFUSE": {
+                "token": "0xb1DD0B683d9A56525cC096fbF5eec6E60FE79871",
+                "oToken": "0x61088BCdb038bBCf33D78C5C9B232Bd6810D2281",
+                "debtToken": "0xF3BfbA094c15a1e586B38874160D4BE3c077E6b1",
+                "decimals": 18
+            },
+            "USDC": {
+                "token": "0x28C3d1cD466Ba22f6cae51b1a4692a831696391A",
+                "oToken": "0x8e4eC003B88c0A00229E31d451A9FD1533266FF1",
+                "debtToken": "0xFc15f06085e8FE68E02E80072cA8Ee18019033cc",
+                "decimals": 6
+            },
+            "USDT": {
+                "token": "0x68c9736781E9316ebf5c3d49FE0C1f45D2D104Cd",
+                "oToken": "0xcf85542F02414f4Ff8888d174B16E27393Bd0AfD",
+                "debtToken": "0xF5b748c9692EdeB8C3D317f961d2143252AFf3b3",
+                "decimals": 6
+            },
+            "USDM": {
+                "token": "0x4447863cddABbF2c3dAC826f042e03c91927A196",
+                "oToken": "0xa32715Cd421475CbFD9773B4234FEb37f68CeA97",
+                "debtToken": "0xa18B877f8777b13eb176EA24c7fB8872514029a3",
+                "decimals": 18
+            }
+        }
+    },
+    "meter": {
+        "lending_incentives": true,
+        "mint_incentives": false,
+        "staking_keeper": true,
+        "mint_active": false,
+        "trade_active": true,
+        "lend_active": true,
+        "mint": false,
+        "contracts": {
+            "pyth_oracle": "0xbFe3f445653f2136b2FD1e6DdDb5676392E3AF16",
+            "position_keeper": "0xFd60266002F4FAaBE8d8d9C66294EDe4810C6f34",
+            "limit_order_keeper": "0x948d447ef250E3468481E8622A475980F01015e1",
+            "vault": "0x95cd3F1DE20A29B473FcC1773069316a424c746D",
+            "order_book": "0x54487521C4a8cdD2f71465CCDA613A5B033aDCEf",
+            "positionRouter": "0x2c2280cD95ea3f5793829761fc770D693380310c",
+            "lending_reward_token": "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3",
+            "lend_oracle": "0xb0159581dbA0D6af470750f8cC8441129B0bb024",
+            "MeridianProtocolDataProvider": "0xE2cAA736ACF8C88102830bb7465216dd08172255",
+            "walletBalanceProvider": "0x81d12ec5f1553cC2D9bEECda4B38015a8424C568",
+            "pullRewardsIncentivesController": "0xBAE27c0F27A7bff3f391A19E0dE2d241E2497a09",
+            "staking_keeper": "0x873415F6633A0C42b8717bC898354638F52b13f3",
+            "stakingPool": "0xe50882F137e0E00C06E62634f8A2b25c9FC64971",
+            "oracle_keeper": "0x77723e81D59EC4F20600A7d4CB0344ED271316af",
+            "lendingPool": "0xDcA551F04EfA24D7B850D7D6B35F6767b950C840",
+            "MST": "0x5647f6cc997e45b81d786bAa9ECd8A1ad40Ef25f",
+            "balancer_vault": "0x913f21E596790aFC6AA45229E9ff8b7d0A473D5A",
+            "lendingOracle": "0xb0159581dbA0D6af470750f8cC8441129B0bb024",
+            "fsMLP": "0x60e9E23af06B09C5918474eE7aA759B6113fED09",
+            "glp_manager": "0x7129a5B00cAd63985b75c26D9DDa57aEE57259e7"
+        },
+        "balancer_keys": {
+            "mst_wstmtrg": "0xbfd3c6457069bf173714f344447be468a83e7bd500020000000000000000000b",
+            "wstmtrg_mtrg": "0x2077a828fd58025655335a8756dbcfeb7e5bec46000000000000000000000008"
+        },
+        "rpcs": [
+            "https://rpc.meter.io",
+            "https://meter.blockpi.network/v1/rpc/public"
+        ],
+        "coingecko_id": "fuse-network-token",
+        "lending_tokens": {
+            "WETH": {
+                "token": "0x983147FB73A45FC7F8B4DFA1cd61Bdc7b111e5b6",
+                "oToken": "0x041e5F588e6D56830Df499d6cCC30ebDa4AEe3f7",
+                "debtToken": "0x11CEDe9cA2C85eD54dE744c23F9896d4a590D400",
+                "decimals": 18
+            },
+            "MTRG": {
+                "token": "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3",
+                "oToken": "0xD03B8C81eCa7311FCc6CC05f21d4Bf5023016080",
+                "debtToken": "0x3fCEAD15E7164281510782Eb2907099427e1921C",
+                "decimals": 18
+            },
+            "WSTMTRG": {
+                "token": "0xE2dE616fBD8cb9180B26FcFB1B761A232FE56717",
+                "oToken": "0x9AB0F138C65B7459D3452179856B88f106e6fA5f",
+                "debtToken": "0xb29Ed5EAC05762eb5a3C58393ddD293F8954c1b7",
+                "decimals": 18
+            },
+            "USDC": {
+                "token": "0xD86e243FC0007e6226B07c9A50C9d70D78299EB5",
+                "oToken": "0xd9000e5a0185C523B359b338c4e2B9b97B3964b1",
+                "debtToken": "0x096174A71A4e338Ef7292002E106a8f07559A9eb",
+                "decimals": 6
+            },
+            "USDT": {
+                "token": "0x5Fa41671c48e3C951AfC30816947126CCC8C162e",
+                "oToken": "0xdEb37Be007640F86ffB2D8849b2E4DDF87C4ee78",
+                "debtToken": "0x6E203CB136eD40caD032ab550B861A58e66C4f0C",
+                "decimals": 6
+            }
+        }
+    },
+    "taiko": {
+        "lending_incentives": true,
+        "mint_incentives": false,
+        "staking_keeper": true,
+        "mint_active": false,
+        "trade_active": false,
+        "lend_active": true,
+        "contracts": {
+            "lending_reward_token": "0xA9d23408b9bA935c230493c40C73824Df71A0975",
+            "lend_oracle": "0xd79417be2cE02fc22F2E520869b1DfC02a677751",
+            "MeridianProtocolDataProvider": "0xef6881676d7fC7bd6E09927f833a9ACAAab0bA07",
+            "walletBalanceProvider": "0x93335200cdbb8c567A205606D7319CC321D085d0",
+            "pullRewardsIncentivesController": "0xb3020EbFD800B488B64E92A8717E826cBf0d63E2",
+            "lendingPool": "0x1697A950a67d9040464287b88fCa6cb5FbEC09BA",
+            "staking_keeper": "0x873415F6633A0C42b8717bC898354638F52b13f3",
+            "oracle_keeper": "0x948d447ef250E3468481E8622A475980F01015e1"
+        },
+        "rpcs": [
+            "https://rpc.taiko.xyz",
+            "https://rpc.ankr.com/taiko",
+            "https://taiko.blockpi.network/v1/rpc/public"
+        ],
+        "coingecko_id": "taiko",
+        "lending_tokens": {
+            "USDCe": {
+                "token": "0x19e26B0638bf63aa9fa4d14c6baF8D52eBE86C5C",
+                "oToken": "0xa3f248A1779364FB8B6b59304395229ea8241229",
+                "debtToken": "0x22F48Ddbc34Fa22eda937496Fe702f2095D70a8e",
+                "decimals": 6
+            },
+            "USDC": {
+                "token": "0x07d83526730c7438048D55A4fc0b850e2aaB6f0b",
+                "oToken": "0x3807A7D65D82784E91Fb4eaD75044C7B4F03A462",
+                "debtToken": "0xd37B96C82D4540610017126c042AFdde28578Afa",
+                "decimals": 6
+            },
+            "USDT": {
+                "token": "0x9c2dc7377717603eB92b2655c5f2E7997a4945BD",
+                "oToken": "0x4361736820d9fE2A354225c7afDc246E5013135D",
+                "debtToken": "0x6cD8F57977bB325359d0761b6B334D76697dA441",
+                "decimals": 6
+            },
+            "TAIKO": {
+                "token": "0xA9d23408b9bA935c230493c40C73824Df71A0975",
+                "oToken": "0xc2aB0FE37dB900ed7b7d3E0bc6a194cB78E33FB4",
+                "debtToken": "0xce0f8615380843EFa8CF6650a712c05e534A0e3F",
+                "decimals": 18
+            },
+            "WETH": {
+                "token": "0xA51894664A773981C6C112C43ce576f315d5b1B6",
+                "oToken": "0xB908808F52116380FFADCaebcab97A8cAD9409D2",
+                "debtToken": "0x3Ef9b96D8a88Df1CAAB4A060e2904Fe26aE518Ce",
+                "decimals": 18
+            }
+        }
+    },
+    "telos": {
+        "lending_incentives": true,
+        "mint_incentives": true,
+        "staking_keeper": true,
+        "mint_active": true,
+        "trade_active": false,
+        "lend_active": true,
+        "contracts": {
+            "lending_reward_token": "0x8f7D64ea96D729EF24a0F30b4526D47b80d877B9",
+            "lend_oracle": "0x3C53B9d70A94e0e454583243c1Cf247FF17Db021",
+            "MeridianProtocolDataProvider": "0x6DE58d6dBECF87D7cE972f6E4838fEeCc63B4c5e",
+            "walletBalanceProvider": "0xD1A006172f14d8C117B5Cf1ED1197dC18cCe66A3",
+            "pullRewardsIncentivesController_OLD": "0x406F044A5aBF071db08E4482c3487331Cf284ADc",
+            "pullRewardsIncentivesController": "0xdD55c9200a8CBA7A1d62F440660f1EAE16d02e20",
+            "troveManager": "0xb1F92104E1Ad5Ed84592666EfB1eB52b946E6e68",
+            "communityIssuence": "0xC573b879Aae1a74aa6c6a5226F8E2e53644D34a4",
+            "stabilityPool": "0xE696c38b79307F65F2E00Bc6C572C2B83E048e36",
+            "lendingPool": "0xd8d02083570f457f96864CEb1720E368B5C9Fe51",
+            "staking_keeper": "0x873415F6633A0C42b8717bC898354638F52b13f3",
+            "oracle_keeper": "0x4b4c4a6e760FDEa078efC6BEa046946b639BdDEA"
+        },
+        "rpcs": [
+            "https://mainnet-asia.telos.net/evm",
+            "https://rpc1.eu.telos.net/evm",
+            "https://mainnet15.telos.net/evm",
+            "https://mainnet.telos.net/evm",
+            "https://api.kainosbp.com/evm"
+        ],
+        "coingecko_id": "telos",
+        "lending_tokens": {
+            "USDM": {
+                "token": "0x8f7D64ea96D729EF24a0F30b4526D47b80d877B9",
+                "oToken": "0xdd417E6f46e7247628FA26EFaf28a10eF5E960a8",
+                "debtToken": "0x550139d40655F7765fb69502B05379BCEE4fBa59",
+                "stableToken": "0xBcCd25Eb975275E4404d96771AcB2C9E73793fa7",
+                "decimals": 18
+            },
+            "USDC": {
+                "token": "0x8D97Cea50351Fb4329d591682b148D43a0C3611b",
+                "oToken": "0x24b376800dd8F589d92Ba0c5Da099Dcdaa44Ef33",
+                "debtToken": "0x89d4560C1cb9353947a501e93D441F42f7e11cef",
+                "stableToken": "0x75da5Cc19666Ff9CBEc4b3a309202851d47AcE9e",
+                "decimals": 6
+            },
+            "USDT": {
+                "token": "0x975Ed13fa16857E83e7C493C7741D556eaaD4A3f",
+                "oToken": "0x06D8a9CD225c6Ba0e60166C2e7C2c89509892Ccc",
+                "debtToken": "0x4c21EF6a836A9ccB980b4A94BF0c48E3380846B6",
+                "stableToken": "0x25c9c1569bff4e388607E8a94cb7373b4cEAdD49",
+                "decimals": 6
+            },
+            "WETH": {
+                "token": "0xA0fB8cd450c8Fd3a11901876cD5f17eB47C6bc50",
+                "oToken": "0x00cb290CA9D475506300a60D9e2A775e730b3323",
+                "debtToken": "0x0B8F80Dd1935f018894b8063A7CED8996823FC29",
+                "decimals": 18
+            },
+            "STLOS": {
+                "token": "0xB4B01216a5Bc8F1C8A33CD990A1239030E60C905",
+                "oToken": "0x776ADcF4E1c1C252FA783034fd1682C214Da23d4",
+                "debtToken": "0xb52797316C4dD061C29d07bacb7bF64feBC384c8",
+                "decimals": 18
+            },
+            "WTLOS": {
+                "token": "0xD102cE6A4dB07D247fcc28F366A623Df0938CA9E",
+                "oToken": "0xa55E6dC5aEC7D16793aEfE29DB74C9EED888103e",
+                "debtToken": "0x99c912A1031393ee374332A74F5110Cf7d2C9050",
+                "decimals": 18
+            },
+            "WBTC": {
+                "token": "0x7627b27594bc71e6Ab0fCE755aE8931EB1E12DAC",
+                "oToken": "0x2E87E434662fFEBA007CA3f6375B20d38a7354d3",
+                "debtToken": "0xBC006364c098312dC0bA94776DAE7ADDa345D437",
+                "decimals": 8
+            }
+        }
+    }
+}
